@@ -1,0 +1,38 @@
+\documentclass[tikz,border=5mm]{standalone}
+\begin{document}
+\begin{tikzpicture}[scale=1, every node/.style={font=\small}]
+
+
+% Define vectors
+\coordinate (t_start) at (0, 2.5); % start of t vector
+\coordinate (t_end) at (0, 7.5); % end of t vector
+\coordinate (t_delta_end) at (0.26268, 7.49315);
+\coordinate (o_end) at (-2.5, 10); % end of o vector
+\coordinate (i_delta_end) at (0.20838, 7.7274);
+\def\radius{2.0};
+\def\iarcradius{sqrt(2.5^2 + 2.5^2)};
+\def\tarcradius{5}
+
+
+% Draw vectors
+\draw[->, thick, black, >=stealth] (t_start) -- (t_end) node[pos=0.65, left] {$c\mathbf{h}$}; % ht vector
+\draw[dashed, black] (t_start) -- (t_delta_end); % t delta vector
+
+\draw[->, thick, red, >=stealth] (t_start) -- (o_end) node[midway, left] {$-\eta_o\mathbf{o}$}; % -eta o vector
+
+\draw[->, thick, green!60!black, >=stealth] (o_end) -- (t_end) node[pos=0.75, below left] {$-\eta_i\mathbf{i}$}; % -eta i vector
+\draw[dashed, green!60!black] (o_end) -- (i_delta_end); % i delta vector
+
+\draw[dashed, green!60!black] (o_end) circle[radius=\radius]; % i unit vector circle
+\draw[dashed, black] (t_start) circle[radius=\radius]; % i unit vector circle
+\draw[ultra thick, green!60!black] ([shift={(-2.5, 10)}]315:{\iarcradius}) arc[radius=\iarcradius, start angle=315, end angle= 320] node[above right] {$\eta_i^2d\omega_{\mathbf{i}}$}; % i vector arc
+\draw[ultra thick, green!60!black] ([shift={(-2.5, 10)}]315:{\radius}) arc[radius=\radius, start angle=315, end angle= 320] node[right] {$d\omega_{\mathbf{i}}$}; % unit i vector arc
+\draw[ultra thick, black] ([shift={(0, 2.5)}]90:{\tarcradius}) arc[radius=\tarcradius, start angle=90, end angle=87] node[below right] {$\eta_i^2 | \mathbf{i}\cdot\mathbf{h} | d\omega_{\mathbf{i}}$}; % h vector arc
+\draw[ultra thick, black] ([shift={(0, 2.5)}]90:{\radius}) arc[radius=\radius, start angle=90, end angle=87] node[above right] {$\frac{\eta_i^2 |\mathbf{i}\cdot\mathbf{h}| }{c^2}d\omega_{\mathbf{i}}$}; % unit t vector arc
+
+% Mark vector heads
+\fill (t_start) circle (2pt);
+
+
+\end{tikzpicture}
+\end{document}

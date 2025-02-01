@@ -20,6 +20,10 @@
   <!-- End Google Analytics -->
   {%- endif %}
 
+  {% if page.use_math %}
+  {% include mathjax_support.html %}
+  {% endif %}
+
   <!-- Begin highlight.js support -->
   <link rel="stylesheet" href="/js/highlightjs/styles/github.css">
   <link rel="stylesheet" href="/js/highlightjs/styles/ssms.css" />
