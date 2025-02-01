@@ -21,7 +21,7 @@
   {%- endif %}
 
   {% if page.use_math %}
-  {% include mathjax_support.html %}
+  <!-- {% include mathjax_support.html %} -->
   {% endif %}
 
   <!-- Begin highlight.js support -->
@@ -36,4 +36,21 @@
 
   <script type="text/javascript"> hljs.highlightAll(); </script>
   <!-- end highlight.js support -->
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: {
+        equationNumbers: {
+          autoNumber: "AMS"
+        },
+      },
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']],
+        displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+      }
+    });
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 
+
 </head>
