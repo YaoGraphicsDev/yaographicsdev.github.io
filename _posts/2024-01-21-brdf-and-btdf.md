@@ -237,8 +237,6 @@ $$
 $$
 
 
-
-
 # References
 [^a]: [Eric Heitz. Understanding the Masking-Shadowing Function in Microfacet-Based BRDFs](https://jcgt.org/published/0003/02/03/paper.pdf)
 [^b]: [Earl Hammon Jr. PBR Diffuse Lighting for GGX+Smith Microsurfaces](https://ubm-twvideo01.s3.amazonaws.com/o1/vault/gdc2017/Presentations/Hammon_Earl_PBR_Diffuse_Lighting.pdf)
