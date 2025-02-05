@@ -27,7 +27,7 @@ $$
 + $L(\omega_o, \omega_m)$ -- exitant radiance in $\omega_o$ scattered by all microfacets facing direction $\omega_m$
 + $D_{\omega_o}(\omega_m)$ -- Distribution of visible normals, viewed from direction $\omega_o$.
 
-It says that the total exitant radiance at certain viewing direction $\omega_o$ equals the sum of exitant radiance in that direction, weighted by microfacets' visible normal distribution. Notice this equation says nothing about incident radiance.
+It says that the total exitant radiance at certain viewing direction $\omega_o$ equals the sum of exitant radiance in that direction emitted by microfacets facing direction $\omega_m$, weighted by their corresponding 'visibility' in terms of a visible normal distribution $D_{\omega_o}(\omega_m)$ . Notice how this equation says nothing about incident radiance.
 
 We now turn to look at how microfacets facing direction $\omega_m$ interacts with incident irradiance. Micro-BxDF is defined as[^a]:
 
@@ -97,7 +97,7 @@ We first introduce notations:
 <div style="text-align: center; margin: 40px 0;">
   <figure id="fig1">
     <img src="/images/reflection.svg" alt="refraction Jacobian geometric derivation" style="width: 80%; height: auto; display: block; margin: 0 auto;">
-    <figcaption>Figure 1: Configuration of $\mathbf{i}$, $\mathbf{o}$ and $\mathbf{h}$ in reflection and refraction. </figcaption>
+    <figcaption>Figure 1: Configurations of $\mathbf{i}$, $\mathbf{o}$ and $\mathbf{h}$ in reflection and refraction. </figcaption>
   </figure>
 </div>
 
@@ -122,7 +122,7 @@ $$
 $\delta_\mathbf{i}(\omega_i)$ is a Dirac delta defined in the $\Omega_i$ domain that spikes at $\mathbf{i}$. Introducing a delta function to the integrand allows integral like \eqref{eq:macro-brdf-integral} to be evaluated as its integrand at a fixed configuration of $\mathbf{i}$, $\mathbf{o}$ and $\mathbf{h}$.  \eqref{eq:energy-conserve} is a generalized version of the 'normalized BRDF' equation on page 30 of Earl Hammon Jr.'s lecture[^b].
 
 
-Substitute \eqref{eq:micro-brdf-incident-space} into \eqref{eq:energy-conserve}, we can solve for $k$. But there's a catch. Equation \eqref{eq:macro-brdf-integral} integrates over microfacts' normal domain while \eqref{eq:micro-brdf-incident-space} is defined in the incident domain. We resolve this mismatch of domains by rewriting $\rho(\omega_o, \omega_i, \omega_m)$ in the normal domain $\Omega$.
+Substitute \eqref{eq:micro-brdf-incident-space} into \eqref{eq:energy-conserve}, we can solve for $k$. But there's a catch. Equation \eqref{eq:macro-brdf-integral} integrates over microfacts' normal domain $\Omega$ while \eqref{eq:micro-brdf-incident-space} is defined in the incident domain $\Omega_i$. We resolve this mismatch of domains by rewriting $\rho(\omega_o, \omega_i, \omega_m)$ in the normal domain $\Omega$.
 
 $$
 \begin{equation}
@@ -201,7 +201,7 @@ $$
 \end{equation}
 $$
 
-$\eta$ denotes the index of refraction. An explanation of this equation based on energy conservation can be found in 9.5.2 of the PBRT book.[^d] Intuitively it can be explained as incident irradiance getting compressed to a smaller solid angle at the interface when light propagates from a optically rarer medium to a denser one, resulting in a stronger exitant radiance. 
+$\eta$ denotes the index of refraction. An explanation of this equation based on energy conservation can be found in 9.5.2 of the PBRT book fourth edition.[^d] Intuitively it can be explained as incident irradiance getting compressed to a smaller solid angle at the interface when light propagates from a optically rarer medium to a denser one, resulting in a stronger exitant radiance. 
 
 
 As for the Jacobian, there is also a geometric derivation, shown in Figure 7 of the GGX paper[^c]. The Jacobian is formulated as $\left\lVert\frac{\partial\omega_{\mathbf{h}}}{\partial\omega_{\mathbf{o}}}\right\rVert$.  While in our case, we need $\left\lVert\frac{\partial\omega_{\mathbf{h}}}{\partial\omega_{\mathbf{i}}}\right\rVert$, the rate of change of $\omega_\mathbf{h}$ with respect to $\omega_\mathbf{i}$. [Figure 2](#fig2) illustrates how $\left\lVert\frac{\partial\omega_{\mathbf{h}}}{\partial\omega_{\mathbf{i}}}\right\rVert$ is derived. The idea is similar to that of $\left\lVert\frac{\partial\omega_{\mathbf{h}}}{\partial\omega_{\mathbf{o}}}\right\rVert$ presented in the GGX paper.
@@ -214,7 +214,7 @@ As for the Jacobian, there is also a geometric derivation, shown in Figure 7 of 
   </figure>
 </div>
 
-The rate of change of $\omega_\mathbf{h}$ with respect to $\omega_\mathbf{i}$ is the ratio of the infinitesimal surface area on the $\mathbf{h}$ unit sphere to that on the $\mathbf{i}$ hemisphere: 
+The rate of change of $\omega_\mathbf{h}$ with respect to $\omega_\mathbf{i}$ is the ratio of the infinitesimal surface area on the $\mathbf{h}$ unit sphere to that on the $\mathbf{i}$ unit sphere: 
 
 
 $$
@@ -235,6 +235,8 @@ $$
 = \frac{(1-F_r(\mathbf{o},\mathbf{h}))G_2(\mathbf{o},\mathbf{i},\mathbf{h})D(\mathbf{h})}{\cos{\theta_i}\cos{\theta_o}} \frac{\eta_o^2\left\lvert\mathbf{i}\cdot\mathbf{h}\right\rvert \left\lvert \mathbf{o} \cdot \mathbf{h} \right\rvert}{(\eta_i(\mathbf{i}\cdot\mathbf{h})+\eta_o(\mathbf{o}\cdot\mathbf{h}))^2}
 \end{equation}
 $$
+
+We have the rough dielectric BTDF.
 
 
 # References
