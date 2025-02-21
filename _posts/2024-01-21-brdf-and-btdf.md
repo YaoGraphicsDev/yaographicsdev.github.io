@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Micro-BRDF and BTDF for Ideal Microfacets"
+title:  "Micro-BRDF and BTDF of Ideal Microfacets"
 date:   2025-01-22 10:32:50 +0800
 use_math: true
 ---
