@@ -5,7 +5,7 @@ date:   2025-02-28 16:05:00 +0800
 use_math: true
 ---
 
-One fundamental equations in the field of volumetric rendering is the the Radiative Transfer Equation(RTE)[^a].
+One of the fundamental equations in the field of volumetric rendering is the the Radiative Transfer Equation(RTE)[^a].
 
 $$
 \begin{equation}
