@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Generalized Russian Roulette for Monte Carlo Estimator"
-date:   2025-02-28 16:05:00 +0800
+date:   2025-03-07 16:05:00 +0800
 use_math: true
 ---
 
