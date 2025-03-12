@@ -5,7 +5,7 @@ date:   2025-02-28 16:05:00 +0800
 use_math: true
 ---
 
-One of the fundamental equations in the field of volumetric rendering is the the Radiative Transfer Equation(RTE)[^a].
+One fundamental equation in the field of volume rendering is the Radiative Transfer Equation(RTE)[^a].
 
 $$
 \begin{equation}
@@ -120,7 +120,7 @@ y(x)=e^{-\int^x_0{p(v)}dv}\left(\int^x_0{e^{\int^u_0{p(v)}dv}f(u)}du+C\right) \l
 \end{equation}
 $$
 
-Apply boundary constraint $y(0)$, we can solve for constant $C$.
+Apply boundary condition $y(0)$, we can solve for constant $C$.
 
 $$
 \begin{equation}
