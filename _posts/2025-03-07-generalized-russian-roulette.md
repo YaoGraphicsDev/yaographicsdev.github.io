@@ -113,9 +113,9 @@ E(F_n) &=& E\left(\frac{1}{n}\sum_{i=1}^{n}\left( \frac{Y_if(X_i)}{p(X_i)} + \fr
 \end{eqnarray}
 $$
 
-The condition that allows the expansion from \eqref{eq:expectation-2} to \eqref{eq:expectation-3} is that $X$ and $Y$ are independent. The expectation is exactly the integral we are trying to estimate, thus the estimator is unbiased. This estimator is not limited to estimating the integral of two linearly combined functions. The way this Pixar course[^a] carries out Delta tracking when null-scattering coefficient $\sigma_n$ is non-zero involves an interpolation between three functions. By extending Bernoulli distribution to three outcomes each assigned a probability, with similar reasoning we can formulate an estimator similar to \eqref{eq:expectation-2}. It is also unbiased.  
+The condition that allows the expansion from \eqref{eq:expectation-2} to \eqref{eq:expectation-3} is that $X$ and $Y$ are independent. The expectation is exactly the integral we are trying to estimate, thus the estimator is unbiased. This estimator is not limited to estimating the integral of two linearly combined functions. The way the Pixar course[^a] carries out Delta tracking when null-scattering coefficient $\sigma_n$ is non-zero involves an interpolation between three functions. By extending Bernoulli distribution to three outcomes each assigned a probability, with similar reasoning we can formulate an estimator similar to \eqref{eq:expectation-1}. It is also unbiased.  
 
-# Another Specialized Case: Russian Roulette
+# A Specialized Case: Russian Roulette
 
 Russian Roulette is a technique that aims to improve the efficiency of Monte Carlo estimator. It is characterized by
 1. stochastically skipping evaluation of samples with a probability $q$
