@@ -198,6 +198,7 @@ A^{\perp}(\mathbf{u}) = \frac{\pi \left\lVert \mathbf{A}\mathbf{u} \right\rVert}
 \end{equation}
 $$
 
+A Math StackExchange answer[^ProjClosedForm] derives a general closed-form expression for this projected area. Substituting $Q_e = \mathbf{A}^\mathsf{T}\mathbf{A}$, light direction $\mathbf{d}_0 = \mathbf{u}$ and projection plane normal $\mathbf{n} = \mathbf{u}$ into the shadow expression yields a result identical to \eqref{eq:A_perp_expression}.
 
 Substitute \eqref{eq:k_g} and \eqref{eq:A_perp_expression} back into \eqref{eq:d-normalized}:
 
@@ -237,3 +238,4 @@ $$
 [^Walter2007]: [Bruce Walter. Microfacet Models for Refraction through Rough Surfaces](https://www.graphics.cornell.edu/~bjw/microfacetbsdf.pdf)
 [^Heitz2018]: [Eric Hritz. Sampling the GGX Distribution of Visible Normals](https://jcgt.org/published/0007/04/01/paper.pdf)
 [^Walter2016]: [Bruce Walter. The Ellipsoid Normal Distribution Function](https://www.cs.cornell.edu/Projects/metalappearance/SupplementalEllipsoidNDF.pdf)
+[^ProjClosedForm]: ["user948761. Closed form expression for shadow area of an ellipsoid subject to uniform direction light"](https://math.stackexchange.com/a/4799289)
