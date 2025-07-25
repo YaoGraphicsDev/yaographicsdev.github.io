@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The Ellipsoidal Nature of GGX distribution - Part 2"
-date:   2025-07-09 16:05:00 +0800
+date:   2025-07-15 16:05:00 +0800
 use_math: true
 ---
 
@@ -43,13 +43,13 @@ $$
 \mathbf{m} = \frac{\nabla f}{\left\lVert \nabla f \right\rVert} = \frac{2}{\left\lVert \nabla f \right\rVert} \left( \frac{x}{a^2}, \frac{y}{b^2}, \frac{z}{c^2} \right) = \frac{2}{\left\lVert \nabla f \right\rVert} \left( \frac{\sqrt{\xi_1}\cos(2\pi\xi_2)}{a}, \frac{\sqrt{\xi_1}\sin(2\pi\xi_2)}{b}, \frac{\sqrt{1-\xi_1}}{c} \right)
 $$
 
-Spherical coordinates of $\mathbf{m}$ are as follows. Also substitute $\mathbf{a}$ and $\mathbf{b}$ with $(\alpha_x)^{-1}$ and $(\alpha_y)^{-1}$: 
+Spherical coordinates of $\mathbf{m}$ are as follows. Also substitute $a$, $b$ and $c$ with $(\alpha_x)^{-1}$, $(\alpha_y)^{-1}$ and $1$: 
 
 $$
 \begin{eqnarray}
 \theta_m &=& \arctan\left(\frac{\sqrt{m_x^2 + m_y^2}}{m_z}\right) \\
-&=& \arctan\left(c \sqrt{\frac{\xi_1}{1-\xi_1}\left(\frac{\cos^2(2\pi\xi_2)}{a^2}+\frac{\sin^2(2\pi\xi_2)}{b^2}\right)}\right) \\
-&=& \arctan\left(c \sqrt{\frac{\xi_1}{1-\xi_1}\left(\alpha_x^2\cos^2(2\pi\xi_2)+\alpha_y^2\sin^2(2\pi\xi_2)\right)}\right) \label{eq:theta_m_sample} \\
+&=& \arctan\left(\sqrt{\frac{\xi_1}{1-\xi_1}\left(\frac{\cos^2(2\pi\xi_2)}{a^2}+\frac{\sin^2(2\pi\xi_2)}{b^2}\right)}\right) \\
+&=& \arctan\left(\sqrt{\frac{\xi_1}{1-\xi_1}\left(\alpha_x^2\cos^2(2\pi\xi_2)+\alpha_y^2\sin^2(2\pi\xi_2)\right)}\right) \label{eq:theta_m_sample} \\
 \phi_m &=& \arctan\left( \frac{y_m}{x_m} \right) = \arctan\left( \frac{a}{b} \tan\left( 2\pi\xi_2 \right) \right) = \arctan\left( \frac{\alpha_y}{\alpha_x} \tan\left( 2\pi\xi_2 \right) \right) \label{eq:phi_m_sample}
 \end{eqnarray}
 $$

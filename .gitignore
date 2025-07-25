@@ -6,3 +6,4 @@ Gemfile.lock
 images/*.aux
 images/*.dvi
 images/*.log
+*.log
