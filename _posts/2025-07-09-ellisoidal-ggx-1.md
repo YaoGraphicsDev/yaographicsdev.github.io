@@ -204,7 +204,7 @@ Substitute \eqref{eq:k_g} and \eqref{eq:A_perp_expression} back into \eqref{eq:d
 
 $$
 \begin{equation}
-D(\mathbf{m}) = \frac{abc}{\pi \left\lVert \mathbf{A}\mathbf{u} \right\rVert \left(\mathbf{m}^{\mathsf{T}} \mathbf{A}^{-1} \mathbf{A}^{-\mathsf{T}}\mathbf{m}\right)^2}
+D(\mathbf{m}, \mathbf{u}) = \frac{abc}{\pi \left\lVert \mathbf{A}\mathbf{u} \right\rVert \left(\mathbf{m}^{\mathsf{T}} \mathbf{A}^{-1} \mathbf{A}^{-\mathsf{T}}\mathbf{m}\right)^2}
 \end{equation}
 $$
 

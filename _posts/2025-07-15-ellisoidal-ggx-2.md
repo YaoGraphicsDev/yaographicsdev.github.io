@@ -144,7 +144,7 @@ $$
 \end{eqnarray}
 $$
 
-Next, the transformaion between $(t_1, t_2)$ and $(t_1^\prime, t_2^\prime)$ as given by Eq.(11) of the VNDF sampling article[^Heitz2018]:
+Next, the transformation between $(t_1, t_2)$ and $(t_1^\prime, t_2^\prime)$ as given by Eq.(11) of the VNDF sampling article[^Heitz2018]:
 
 $$
 \begin{eqnarray}
@@ -189,13 +189,13 @@ $$
 
 This is the PDF of $\mathbf{m}^\prime$ obtained by following step 2 through 5. Below, we will demonstrate that when we transform $\mathbf{m}^\prime$ sampled in this manner to its ellipsoid space counterpart $\mathbf{m}$, the PDF of $\mathbf{m}$, denoted by $p(\mathbf{m})$, matches the expression given by Heitz[^Heitz2018] in Eq.3.
 
-We can make the following observations:
+We can make the following derivation by observing the expression of $D(\mathbf{m}, \mathbf{u})$ from part one:
 
 $$
 \begin{eqnarray}
 D(\mathbf{m}, \mathbf{v})
-&=& \frac{\left\lvert \mathbf{A} \right\rvert}{\pi \left\lVert \mathbf{Av} \right\rVert \left( \left( \mathbf{A}^{-\mathsf{T}}\mathbf{m} \right)^{-\mathsf{T}} \left( \mathbf{A}^{-\mathsf{T}}\mathbf{m} \right) \right)^2 }
-= \frac{\left\lvert \mathbf{A} \right\rvert}{\left\lVert \mathbf{Av} \right\rVert} D_s(\mathbf{m}^\prime, \mathbf{v}^\prime) \label{eq:d-sphere-to-ellipsoid} \\
+&=& \frac{1}{\pi \left\lvert \mathbf{A} \right\rvert \left\lVert \mathbf{Av} \right\rVert \left( \left( \mathbf{A}^{-\mathsf{T}}\mathbf{m} \right)^{\mathsf{T}} \left( \mathbf{A}^{-\mathsf{T}}\mathbf{m} \right) \right)^2 }
+= \frac{1}{\left\lvert \mathbf{A} \right\rvert \left\lVert \mathbf{Av} \right\rVert \left\lVert \mathbf{A}^{-\mathsf{T}}\mathbf{m} \right\rVert^4} D_s(\mathbf{m}^\prime, \mathbf{v}^\prime) \label{eq:d-sphere-to-ellipsoid} \\
 
 \mathbf{m^{\prime}}\cdot\mathbf{v^{\prime}}
 &=& \frac{(\mathbf{A}^{-\mathsf{T}}\mathbf{m})^{\mathsf{T}} \mathbf{A}\mathbf{v}}{\left\lVert \mathbf{A}\mathbf{v} \right\rVert \left\lVert \mathbf{A}^{-\mathsf{T}}\mathbf{m} \right\rVert}
@@ -207,7 +207,7 @@ Substitute \eqref{eq:mv-sphere-to-ellipsoid} and \eqref{eq:d-sphere-to-ellipsoid
 
 $$
 \begin{equation}
-p_c(\mathbf{m^{\prime}})= \frac{1}{s} \frac{D(\mathbf{m}, \mathbf{v}) (\mathbf{m}\cdot\mathbf{v})}{\left\lvert \mathbf{A} \right\rvert \left\lVert \mathbf{A}^{-\mathsf{T}}\mathbf{m} \right\rVert}
+p_c(\mathbf{m^{\prime}})= \frac{1}{s} D(\mathbf{m}, \mathbf{v}) (\mathbf{m}\cdot\mathbf{v})\left\lvert \mathbf{A} \right\rvert \left\lVert \mathbf{A}^{-\mathsf{T}}\mathbf{m} \right\rVert^3
 \end{equation}
 $$
 
@@ -215,15 +215,15 @@ $p_c(\mathbf{m}^\prime)$ and $p(\mathbf{m})$ are related by
 
 $$
 \begin{equation}
-p_c(\mathbf{m}^\prime) d\Omega^\prime = p(\mathbf{m}) d\Omega \Rightarrow p(\mathbf{m}) = p_c(\mathbf{m}^\prime) \left\lvert \frac{d\Omega^\prime}{d\Omega} \right\rvert
+p(\mathbf{m}) = p_c(\mathbf{m}^\prime) \left\lvert \frac{\partial\mathbf{m}^\prime}{\partial\mathbf{m}} \right\rvert
 \end{equation}
 $$
 
-$\left\lvert \frac{d\Omega^\prime}{d\Omega} \right\rvert$ is the Jacobian determinant accounting for the transformation of the solid angle from ellipsoid space to sphere space. Note that it is the reciprocal of $\left\lvert \frac{d\mathbf{m}^\prime}{d\mathbf{m}} \right\rvert$ given by \eqref{eq:m-to-m-prime}:
+$\left\lvert \frac{\partial\mathbf{m}^\prime}{\partial\mathbf{m}} \right\rvert$ is the Jacobian determinant accounting for the transformation of normalized direction vectors from ellipsoid space to sphere space. This transformation is given by Eq.(1) of the linear cosine transform article[^Heitz2016] by Heitz:
 
 $$
 \begin{equation}
-\left\lvert \frac{\partial\Omega^\prime}{\partial\Omega} \right\rvert = \left\lvert \mathbf{A} \right\rvert \left\lVert \mathbf{A}^{-\mathsf{T}}\mathbf{m} \right\rVert \label{eq:solod-angle-jacobian}
+\left\lvert \frac{\partial\mathbf{m}^\prime}{\partial\mathbf{m}} \right\rvert = \left\lvert \mathbf{A} \right\rvert ^{-1} \left\lVert \mathbf{A}^{-\mathsf{T}}\mathbf{m} \right\rVert^{-3} \label{eq:solod-angle-jacobian}
 \end{equation}
 $$
 
@@ -283,4 +283,5 @@ This blog post is largely inspired by Walter's 2016 ellipsoid NDF article[^Walte
 [^Walter2007]: [Bruce Walter. Microfacet Models for Refraction through Rough Surfaces](https://www.graphics.cornell.edu/~bjw/microfacetbsdf.pdf)
 [^Heitz2014]: [Eric Heitz. Understanding the Masking-Shadowing Function in Microfacet-Based BRDFs](https://jcgt.org/published/0003/02/03/paper.pdf)
 [^Heitz2018]: [Eric Heitz. Sampling the GGX Distribution of Visible Normals](https://jcgt.org/published/0007/04/01/paper.pdf)
+[^Heitz2016]: [Eric Heitz. Real-Time Polygonal-Light Shading with Linearly Transformed Cosines](https://drive.google.com/file/d/0BzvWIdpUpRx_d09ndGVjNVJzZjA/view?pli=1&resourcekey=0-21tmiqk55JIZU8UoeJatXQ)
 [^Walter2016]: [Bruce Walter. The Ellipsoid Normal Distribution Function](https://www.cs.cornell.edu/Projects/metalappearance/SupplementalEllipsoidNDF.pdf)
