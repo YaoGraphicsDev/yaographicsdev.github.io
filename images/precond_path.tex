@@ -1,0 +1,22 @@
+\documentclass[tikz]{standalone}
+\begin{document}
+\begin{tikzpicture}    
+    % vertical lines
+    \foreach \x in {0,...,8} {
+        \draw[thick, black] (\x,0) -- (\x,8);
+    }
+    
+    % horizontal lines
+    \foreach \y in {0,...,8} {
+        \draw[thick, black] (0,\y) -- (8,\y);
+    }
+    
+    % red arrow from one cell center to another
+    \draw[->, red, very thick] (7.5,7.5) -- (4.5,7.5);
+    \draw[->, blue, very thick] (4.5,7.5) -- (4.5,2.5);
+
+    \node at (4, 8.5) {\bfseries\large roughness};
+    \node at (-0.5, 4) {\bfseries\large $\theta_v$};
+\end{tikzpicture}
+\end{document}
+
