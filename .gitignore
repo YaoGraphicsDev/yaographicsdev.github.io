@@ -7,3 +7,5 @@ images/*.aux
 images/*.dvi
 images/*.log
 *.log
+.bundle
+vendor
