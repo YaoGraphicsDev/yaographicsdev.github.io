@@ -124,7 +124,7 @@ Every point light in the second image is set to have a very limited influence ra
 1. Light culling and clustering problem. Every ray query needs to know which light affects the point where the ray hits. My existing light culling and clustering system only works in view space. Since probes are scattered across the entire scene, there is no universal view space for all of the probes. So I iterated through all lights. That is going to be problematic performance-wise if light count gets really high. Consider world space light culling. Create a scene-wide grid and rasterize light influence sphere within this grid. Both view space light clustering and ray query light clustering could be incorporated into this architecture.
 2. Probe update frequence. Probes far away from camera or placed near static objects could update at a much lower rate.
 3. Area light or emissive material handling.
-5. Reflective probes 
+4. Reflective probes 
 
 # References
 [^2019DDGI]: [Dynamic Diffuse Global Illumination with Ray-Traced Irradiance Fields](https://jcgt.org/published/0008/02/01/)
