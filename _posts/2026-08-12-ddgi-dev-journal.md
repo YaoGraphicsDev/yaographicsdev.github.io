@@ -82,7 +82,7 @@ Drastically increasing the sample count to 1,024 or even 2,048 rays per probe pe
 
 Temporal denoising requires some fine tuning. The authors refer to the blend weight of the history atlas as 'hysteresis'. If the hysteresis is too high, the probes become less responsive to changes in the scene, creating a lingering effect. If it is too low, flickering becomes more pronounced.
 
-This method prompted me to add support for history resources to my frame graph implementation. See the [OTCV repository](https://github.com/YaoGraphicsDev/otcv/tree/framegraph) for details. Here is the result after temporal denoising:
+This method prompted me to add support for history resources to my frame graph implementation. See the [OTCV repository](https://github.com/YaoGraphicsDev/otcv) for details. Here is the result after temporal denoising:
 
  <p align="center">
     <img src="/images/DDGI/denoised.png" alt="denoised" width="90%">
